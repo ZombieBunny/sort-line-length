@@ -3,7 +3,7 @@
 You ever feel like your files look like you copy/paste too often?
 Your pull requests getting rejected a little too often?
 
-Make your spaghetti code look like it was caerefully thought through!
+Make your spaghetti code look like it was carefully thought through!
 
 All you need to do:
 
@@ -13,11 +13,11 @@ All you need to do:
 
 ## Features
 
-Can sort all of your unnesisary imports/exports. You use a scripting language? It'll sort every copy/paste line of code you can managee to highlight with your overpriced mouse.
+Can sort all of your unnecessary imports/exports. You use a scripting language? It'll sort every copy/paste line of code you can manage to highlight with your overpriced mouse.
 
 ## Release Notes
 
-Added ability to sort your lines by line length. Added inituitive ability to change polarity of sorting when user triggers sort on the same highlighted text, more than once. Added ability to save ~3min by using keyboard shortcut to trigger sorting.
+Added ability to sort your lines by line length. Added intuitive ability to change polarity of sorting when user triggers sort on the same highlighted text, more than once. Added ability to save ~3min by using keyboard shortcut to trigger sorting.
 
 ### 1.0.0
 
