@@ -3,7 +3,7 @@
 	"displayName": "Sort lines by their length",
 	"description": "Easily sort imports and other arrays with a quick flick of the wrist!",
 	"version": "0.0.1",
-	"icon": "images/rootfoldername.png",
+	"icon": "images/sortThemLines.png",
 	"engines": {
 		"vscode": "^1.39.0"
 	},
