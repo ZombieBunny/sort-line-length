@@ -2,7 +2,7 @@
 	"name": "sort-line-length",
 	"displayName": "Sort lines by their length",
 	"description": "Easily sort imports and other arrays with a quick flick of the wrist!",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"icon": "images/sorted.png",
 	"repository": "https://github.com/ZombieBunny/sort-line-length",
 	"engines": {
@@ -28,12 +28,12 @@
 			}
 		],
 		"keybindings": [
-            {
-                "command": "extension.sortLineLength",
-                "key": "ctrl+alt+z",
-                "mac": "shift+cmd+z"
-            }
-        ]
+			{
+				"command": "extension.sortLineLength",
+				"key": "ctrl+alt+z",
+				"mac": "shift+cmd+z"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
