@@ -2,7 +2,7 @@
 	"name": "sort-line-length",
 	"displayName": "Sort lines by their length",
 	"description": "Easily sort imports and other arrays with a quick flick of the wrist!",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"icon": "images/sortThemLines.png",
 	"engines": {
 		"vscode": "^1.39.0"
