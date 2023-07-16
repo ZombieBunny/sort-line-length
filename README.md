@@ -1,19 +1,26 @@
-# Sort Lines By Line Length
+# Introducing the 'Sort Lines By Line Length' - Your Secret Weapon for Clean and Polished Code
 
-You ever feel like your files look like you copy/paste too often?
-Your pull requests getting rejected a little too often?
+Tired of messy code that seems to have a life of its own? We've got you covered! Say goodbye to copy-paste chaos and endless pull request rejections, and say hello to beautifully organized code that exudes professionalism.
 
-Make your spaghetti code look like it was carefully thought through!
+## Key Benefits
 
-All you need to do:
+✓ Turn Spaghetti Code into Masterpieces: With our revolutionary extension, your files will no longer resemble a tangled mess of copy-pasted lines. Watch as your code transforms into a well-thought-out masterpiece, impressing your team and clients alike.
 
-1. Highlight lines.
-2. Press `Shift+CMD+z` (macOS) / `ctrl+alt+z` (windows).
-3. Take 30min break.
+✓ Effortless Sorting: Sorting your code has never been easier. Simply highlight the lines you want to tidy up, and with a quick shortcut, our extension will do the rest. Shift+CMD+z (macOS) / ctrl+alt+z (windows) is your magic combination to coding brilliance!
+
+✓ Unleash the Power of Efficiency: We value your time, and that's why we've designed the extension to save you precious minutes. Wave goodbye to unnecessary imports/exports, and even if you're working with a scripting language, our extension handles every copy-pasted line you can throw at it.
 
 ## Features
 
-Can sort all of your unnecessary imports/exports. You use a scripting language? It'll sort every copy/paste line of code you can manage to highlight with your overpriced mouse.
+✨ Intelligent Sorting: Our extension goes beyond the basics, offering you the ability to sort lines by their length, delivering a level of organization you've never experienced before.
+
+✨ Intuitive Polarity Control: Sorting the same highlighted text multiple times? No problem! Our extension intuitively changes the sorting polarity, giving you ultimate control over your code's structure.
+
+✨ Lightning-Fast Shortcuts: We understand the importance of speed in development. That's why we've equipped our extension with a time-saving keyboard shortcut. Trigger the sorting process effortlessly and save up to 3 minutes with each use.
+
+Join thousands of developers worldwide who have already transformed their coding experience with Sort Lines By Line Length. Embrace clean, structured code that will elevate your projects to new heights.
+
+Download now and unlock the true potential of your code! Happy coding! 🚀
 
 ## Release Notes
 
