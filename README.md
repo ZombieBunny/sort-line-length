@@ -30,4 +30,17 @@ Added ability to sort your lines by line length. Added intuitive ability to chan
 
 Initial release.
 
+### 1.1.0
+
+Updated readme.
+
+### 1.1.1
+
+Learnt how to use patch.
+Updated readme.
+
+### 1.1.2
+
+Updated readme.
+
 If you want to improve this document or have a feature you want to add, please submit a PR to the [git repo](https://github.com/ZombieBunny/sort-line-length).
