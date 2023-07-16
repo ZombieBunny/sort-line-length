@@ -18,7 +18,7 @@ Tired of messy code that seems to have a life of its own? We've got you covered!
 
 ✨ Lightning-Fast Shortcuts: We understand the importance of speed in development. That's why we've equipped our extension with a time-saving keyboard shortcut. Trigger the sorting process effortlessly and save up to 3 minutes with each use.
 
-Join thousands of developers worldwide who have already transformed their coding experience with Sort Lines By Line Length. Embrace clean, structured code that will elevate your projects to new heights.
+Join several developers worldwide who have already transformed their coding experience with Sort Lines By Line Length. Embrace clean, structured code that will elevate your projects to new heights.
 
 Download now and unlock the true potential of your code! Happy coding! 🚀
 
