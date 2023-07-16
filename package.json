@@ -2,7 +2,7 @@
 	"name": "sort-line-length",
 	"displayName": "Sort lines by their length",
 	"description": "Easily sort imports and other arrays with a quick flick of the wrist!",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"icon": "images/sorted.png",
 	"repository": "https://github.com/ZombieBunny/sort-line-length",
 	"engines": {
