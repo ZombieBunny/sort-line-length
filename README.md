@@ -6,7 +6,7 @@ Tired of messy code that seems to have a life of its own? We've got you covered!
 
 ✓ Turn Spaghetti Code into Masterpieces: With our revolutionary extension, your files will no longer resemble a tangled mess of copy-pasted lines. Watch as your code transforms into a well-thought-out masterpiece, impressing your team and clients alike.
 
-✓ Effortless Sorting: Sorting your code has never been easier. Simply highlight the lines you want to tidy up, and with a quick shortcut, our extension will do the rest. Shift+CMD+z (macOS) / ctrl+alt+z (windows) is your magic combination to coding brilliance!
+✓ Effortless Sorting: Sorting your code has never been easier. Simply highlight the lines you want to tidy up, and with a quick shortcut, our extension will do the rest. CMD+Shift+l (macOS) / ctrl+alt+z (windows) is your magic combination to coding brilliance!
 
 ✓ Unleash the Power of Efficiency: We value your time, and that's why we've designed the extension to save you precious minutes. Wave goodbye to unnecessary imports/exports, and even if you're working with a scripting language, our extension handles every copy-pasted line you can throw at it.
 

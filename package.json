@@ -31,8 +31,8 @@
 		"keybindings": [
 			{
 				"command": "extension.sortLineLength",
-				"key": "ctrl+alt+z",
-				"mac": "shift+cmd+z"
+				"key": "ctrl+alt+l",
+				"mac": "cmd+shift+l"
 			}
 		]
 	},
