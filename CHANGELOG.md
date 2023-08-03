@@ -4,7 +4,6 @@ All notable changes to the "sort-line-length" extension will be documented in th
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
 ## [Unreleased]
 
 - Adding the ability to configure multi line identifier. Currently using regex to identify multi line imports in typescript, but I want people to be able to update the regex for their own language.
@@ -52,4 +51,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial release
+- Added ability to sort your lines by line length. Added intuitive ability to change polarity of sorting when user triggers sort on the same highlighted text, more than once. Added ability to save ~3min by using keyboard shortcut to trigger sorting.

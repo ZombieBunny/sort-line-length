@@ -22,25 +22,6 @@ Join several developers worldwide who have already transformed their coding expe
 
 Download now and unlock the true potential of your code! Happy coding! 🚀
 
-## Release Notes
-
-Added ability to sort your lines by line length. Added intuitive ability to change polarity of sorting when user triggers sort on the same highlighted text, more than once. Added ability to save ~3min by using keyboard shortcut to trigger sorting.
-
-### 1.0.0
-
-Initial release.
-
-### 1.1.0
-
-Updated readme.
-
-### 1.1.1
-
-Learnt how to use patch.
-Updated readme.
-
-### 1.1.2
-
-Updated readme.
+## Contribute
 
 If you want to improve this document or have a feature you want to add, please submit a PR to the [git repo](https://github.com/ZombieBunny/sort-line-length).
