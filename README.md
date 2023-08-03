@@ -2,6 +2,7 @@
 
 Tired of messy code that seems to have a life of its own? We've got you covered! Say goodbye to copy-paste chaos and endless pull request rejections, and say hello to beautifully organized code that exudes professionalism.
 
+![Sort lines](./images/sort-line-length.gif)
 ## Key Benefits
 
 ✓ Turn Spaghetti Code into Masterpieces: With our revolutionary extension, your files will no longer resemble a tangled mess of copy-pasted lines. Watch as your code transforms into a well-thought-out masterpiece, impressing your team and clients alike.

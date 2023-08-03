@@ -3,7 +3,7 @@
 	"displayName": "Sort lines by line length",
 	"description": "Transform your messy code into a work of art with Sort Lines By Line Length, the ultimate tool for effortless organization and polished programming.",
 	"version": "1.1.5",
-	"icon": "images/sorted.png",
+	"icon": "images/sort-line-length.gif",
 	"repository": "https://github.com/ZombieBunny/sort-line-length",
 	"engines": {
 		"vscode": "^1.39.0"
