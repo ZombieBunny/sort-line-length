@@ -6,7 +6,7 @@ Tired of messy code that seems to have a life of its own? We've got you covered!
 
 ✓ Turn Spaghetti Code into Masterpieces: With our revolutionary extension, your files will no longer resemble a tangled mess of copy-pasted lines. Watch as your code transforms into a well-thought-out masterpiece, impressing your team and clients alike.
 
-✓ Effortless Sorting: Sorting your code has never been easier. Simply highlight the lines you want to tidy up, and with a quick shortcut, our extension will do the rest. CMD+Shift+l (macOS) / ctrl+alt+z (windows) is your magic combination to coding brilliance!
+✓ Effortless Sorting: Sorting your code has never been easier. Simply highlight the lines you want to tidy up, and with a quick shortcut, our extension will do the rest. CMD+Shift+L (macOS) / ctrl+alt+L (windows) is your magic combination to coding brilliance!
 
 ✓ Unleash the Power of Efficiency: We value your time, and that's why we've designed the extension to save you precious minutes. Wave goodbye to unnecessary imports/exports, and even if you're working with a scripting language, our extension handles every copy-pasted line you can throw at it.
 
@@ -22,25 +22,6 @@ Join several developers worldwide who have already transformed their coding expe
 
 Download now and unlock the true potential of your code! Happy coding! 🚀
 
-## Release Notes
-
-Added ability to sort your lines by line length. Added intuitive ability to change polarity of sorting when user triggers sort on the same highlighted text, more than once. Added ability to save ~3min by using keyboard shortcut to trigger sorting.
-
-### 1.0.0
-
-Initial release.
-
-### 1.1.0
-
-Updated readme.
-
-### 1.1.1
-
-Learnt how to use patch.
-Updated readme.
-
-### 1.1.2
-
-Updated readme.
+## Contribute
 
 If you want to improve this document or have a feature you want to add, please submit a PR to the [git repo](https://github.com/ZombieBunny/sort-line-length).
