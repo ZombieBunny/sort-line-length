@@ -22,32 +22,40 @@ export function activate(context: vscode.ExtensionContext) {
 			const defaultLines = JSON.parse(JSON.stringify(lines));
 
 			// must be a better way to define these function/s.
-			const sortAFunction = (a: string, b: string) => {
-				const [aIndex, bIndex] = [defaultLines.indexOf(a) + 1, defaultLines.indexOf(b) + 1];
-				const [aValue, bValue] = [lineMap[`line_${aIndex}`] ?? a.length, lineMap[`line_${bIndex}`] ?? b.length]
+			const sortAFunction = (a: any, b: any) => {
+				// const [aIndex, bIndex] = [defaultLines.indexOf(a) + 1, defaultLines.indexOf(b) + 1];
+				// const [aValue, bValue] = [lineMap[`line_${aIndex}`] ?? a.length, lineMap[`line_${bIndex}`] ?? b.length]
 				// defaultLines1.splice(defaultLines1.indexOf(a), 1);
 				// defaultLines1.splice(defaultLines1.indexOf(b), 1);
 				// defaultLines1.indexOf(a) > 0 ? defaultLines1.splice(defaultLines1.indexOf(a), 1) : null;
 				// defaultLines1.indexOf(b) > 0 ? defaultLines1.splice(defaultLines1.indexOf(b), 1) : null;
-				return bValue - aValue;
+				// return bValue - aValue;
+				return b.lineLength - a.lineLength
 			}
-			const sortDFunction = (a: string, b: string) => {
-				const [aIndex, bIndex] = [defaultLines.indexOf(a) + 1, defaultLines.indexOf(b) + 1];
-				const [aValue, bValue] = [lineMap[`line_${aIndex}`] ?? a.length, lineMap[`line_${bIndex}`] ?? b.length]
+			const sortDFunction = (a: any, b: any) => {
+				// const [aIndex, bIndex] = [defaultLines.indexOf(a) + 1, defaultLines.indexOf(b) + 1];
+				// const [aValue, bValue] = [lineMap[`line_${aIndex}`] ?? a.length, lineMap[`line_${bIndex}`] ?? b.length]
 				// defaultLines2.indexOf(a) > 0 ? defaultLines2.splice(defaultLines2.indexOf(a), 1) : null;
 				// defaultLines2.indexOf(b) > 0 ? defaultLines2.splice(defaultLines2.indexOf(b), 1) : null;
-				return aValue - bValue;
+				// return aValue - bValue;
+				return a.lineLength - b.lineLength
 			}
 
-			const beforeLines = JSON.parse(JSON.stringify(lines.join(",").toString()));
-			lines.sort(sortAFunction);
-			const afterLines = JSON.parse(JSON.stringify(lines.join(",").toString()));
+			// const beforeLines = JSON.parse(JSON.stringify(lines.join(",").toString()));
+			const beforeLines = JSON.parse(JSON.stringify([lineMap.map(l => l.lineValue)].join(",").toString()));
+			// lines.sort(sortAFunction);
+			lineMap.sort(sortAFunction);
+			// lines.sort(function (a, b) { return b.length - a.length });
+			const afterLines = JSON.parse(JSON.stringify([lineMap.map(l => l.lineValue)].join(",").toString()));
+			// const afterLines = JSON.parse(JSON.stringify(lines.join(",").toString()));
+
 
 			// after sorting, if lines match, then change direction of sort.
 			// this means that the user has triggered the event while the same text is highlighted.
 			// we just want to invrert sorting in thsi scenario.
 			if (beforeLines === afterLines) {
-				lines.sort(sortDFunction);
+				// lines.sort(sortDFunction);
+				lineMap.sort(sortDFunction);
 				// lines.sort(function (a, b) { return a.length - b.length });
 			}
 
@@ -57,7 +65,8 @@ export function activate(context: vscode.ExtensionContext) {
 					const line = editor!.document.lineAt(i);
 					const range = new vscode.Range(line.range.start, line.range.end);
 					const direction = selection.start.line - i;
-					editBuilder.replace(range, lines[Math.abs(direction)]);
+					// editBuilder.replace(range, lines[Math.abs(direction)]);
+					editBuilder.replace(range, lineMap[Math.abs(direction)].lineValue);
 				}
 			});
 		}
@@ -66,16 +75,9 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposable);
 }
 
-// Define multi line support:
-// JS/TS
-// identify line start and line end.
-// - use regex ?? : ^import\s+{[\s\S]*?}\s+from\s+'[\s\S]*?';
-// string.includes = ['import','const'];
-// string.includes = ['from','requires',';'];
-const mapLines = (lines: string[]): { [key: string]: number } => {
+const mapLines = (lines: string[]): { lineLength: number, lineValue: string }[] => {
+	const mappedLines: { lineLength: number, lineValue: string }[] = [];
 	const matchMap: { [key: string]: number } = {};
-
-	// identify language
 	// const language = editor?.document.languageId;
 
 	// @TODO: expose identifier used to join lines
@@ -84,21 +86,18 @@ const mapLines = (lines: string[]): { [key: string]: number } => {
 	// @TODO: add ability for user to use custom identifier
 	// default to this if error/no value selected.
 	const regex = /import\s+{[\s\S]?(\|[\s\S]+?)}\s+from\s+'[\w\s\S]*?';/g;
+	
 	const matches = line.match(regex);
 
-	if (!matches) {
-		return matchMap;
-	}
+	for (let match of matches ?? []) {
 
-	for (let match of matches) {
-		// implement abilityt to handle multiple multi line matches!
-		// const match: string = matches[0] ?? "";
+		// the index of the first character of the match
 		const startIndex: number = line.indexOf(match);
 
-		// lines before match
+		// lines before matched characters
 		const precedingLineNumbers: number = (line.substring(0, startIndex)).split("|").length;
 
-		// length of match
+		// length of characters of match
 		const matchTextLength: number = match.length;
 		// work out average length
 		const maxAverageLength = (match.split("|")).sort(function (a: string, b: string) { return a.length - b.length })[0].length;
@@ -111,7 +110,15 @@ const mapLines = (lines: string[]): { [key: string]: number } => {
 		}
 	}
 
-	return matchMap;
+	for (let i = 1; i <= lines?.length; i++) {
+		const l = {
+			lineLength: matchMap[`line_${i}`] > 0 ? matchMap[`line_${i}`] : lines[i - 1]?.length,
+			lineValue: lines[i - 1]
+		}
+		mappedLines.push(l);
+	}
+
+	return mappedLines;
 }
 
 
