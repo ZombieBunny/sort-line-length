@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Adding the ability to configure multi line identifier. Currently using regex to identify multi line imports in typescript, but I want people to be able to update the regex for their own language.
 
+
+## [1.1.7] - 2023-08-03
+
+### Changed
+
+- Improved Description of extension
+- Improved README
+
 ## [1.1.6] - 2023-08-03
 
 ### Changed
