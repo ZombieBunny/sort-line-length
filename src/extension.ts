@@ -4,6 +4,7 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('extension.sortLineLength', () => {
 		const editor = vscode.window.activeTextEditor;
 		const selection = editor!.selection;
+
 		if (selection && selection.isEmpty) {
 			vscode.window.showInformationMessage(`Select a few lines of text before we get sorted!`);
 		}
@@ -19,25 +20,11 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			const lineMap = mapLines(lines);
-			const defaultLines = JSON.parse(JSON.stringify(lines));
-
 			// must be a better way to define these function/s.
 			const sortAFunction = (a: any, b: any) => {
-				// const [aIndex, bIndex] = [defaultLines.indexOf(a) + 1, defaultLines.indexOf(b) + 1];
-				// const [aValue, bValue] = [lineMap[`line_${aIndex}`] ?? a.length, lineMap[`line_${bIndex}`] ?? b.length]
-				// defaultLines1.splice(defaultLines1.indexOf(a), 1);
-				// defaultLines1.splice(defaultLines1.indexOf(b), 1);
-				// defaultLines1.indexOf(a) > 0 ? defaultLines1.splice(defaultLines1.indexOf(a), 1) : null;
-				// defaultLines1.indexOf(b) > 0 ? defaultLines1.splice(defaultLines1.indexOf(b), 1) : null;
-				// return bValue - aValue;
 				return b.lineLength - a.lineLength
 			}
 			const sortDFunction = (a: any, b: any) => {
-				// const [aIndex, bIndex] = [defaultLines.indexOf(a) + 1, defaultLines.indexOf(b) + 1];
-				// const [aValue, bValue] = [lineMap[`line_${aIndex}`] ?? a.length, lineMap[`line_${bIndex}`] ?? b.length]
-				// defaultLines2.indexOf(a) > 0 ? defaultLines2.splice(defaultLines2.indexOf(a), 1) : null;
-				// defaultLines2.indexOf(b) > 0 ? defaultLines2.splice(defaultLines2.indexOf(b), 1) : null;
-				// return aValue - bValue;
 				return a.lineLength - b.lineLength
 			}
 
@@ -85,12 +72,11 @@ const mapLines = (lines: string[]): { lineLength: number, lineValue: string }[] 
 
 	// @TODO: add ability for user to use custom identifier
 	// default to this if error/no value selected.
-	const regex = /import\s+{[\s\S]?(\|[\s\S]+?)}\s+from\s+'[\w\s\S]*?';/g;
+	const regex = /import\s+{[\s\S]?(\|[\s\S]+?)}\s+from\s+['|"][\w\s\S]*?['|"];*/g;
 	
 	const matches = line.match(regex);
 
 	for (let match of matches ?? []) {
-
 		// the index of the first character of the match
 		const startIndex: number = line.indexOf(match);
 
@@ -99,9 +85,10 @@ const mapLines = (lines: string[]): { lineLength: number, lineValue: string }[] 
 
 		// length of characters of match
 		const matchTextLength: number = match.length;
+		
 		// work out average length
-		const maxAverageLength = (match.split("|")).sort(function (a: string, b: string) { return a.length - b.length })[0].length;
-		const minAverageLength = (match.split("|")).sort(function (a: string, b: string) { return b.length - a.length })[0].length;
+		// const maxAverageLength = (match.split("|")).sort(function (a: string, b: string) { return a.length - b.length })[0].length;
+		const minAverageLength = (match.split("|")).sort(function (a: string, b: string) { return b.length - a.length })[0].length; // length of last line of match
 
 		const matchLineNumbers: number = (line.substring(startIndex, startIndex + matchTextLength)).split("|").length;
 		const endRange = precedingLineNumbers + matchLineNumbers;
